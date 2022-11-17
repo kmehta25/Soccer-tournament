@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Soccer Tournament</title>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link href="style.css" rel="stylesheet">
+
+	<!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+	<!-- <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
+	<!-- <link href="style.css" rel="stylesheet"> -->
+
+
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="tournamentDirector.html"><img src="../static/logo6.jpg" height="200" width="50"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="homePageTrnDir.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutPageTrnDir.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fixturesTrnDir.html">Fixtures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="locationTrnDir.html">Maps and Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rulesTrnDir.html">Rules and Accreditation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="standingsTrnDir.html">Standings</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropbtn">Features</button>
+                        <div class="dropdown-content">
+                            <a href="FAQ.html">Answer FAQ</a>
+                        </div>
+                      </div> 
+                </li>
+                
+                <li class="nav-item">
+                    <form action ="http://127.0.0.1:5000/logout" method="POST">
+						<button id= "logout" name = "logout" value = "logout" class="nav-link" >Logout</button>
+					</form>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+        
+<h2 style="color: coral; font-family: cursive; border: 1px;">ABOUT US</h2> <br>   
+
+<!---Sidebar-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">       
+<div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:100px">
+  <button class="w3-bar-item w3-button tablink" onclick="openTab(event, 'Owner')"id="defaultOpen">Owner</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openTab(event, 'Sponsors')">Sponsors</button>
+</div>
+
+<div id="Owner" class="tabcontent">
+    <!---span onclick="this.parentElement.style.display='none'" class="topright">&times</span-->
+  <h3></h3>
+
+<!---Owner Content-->
+  <p style="margin-left:50px; text-align: center; "> <i>The <b>SER515 Soccer Tournament</b> was founded in 2021 by a group of passionate teenagers. <br> 
+    Our Soccer Tournament is regarded as one of a select set of tournament clubs with a really international reputation. <br>We take pleasure in providing the finest possible atmosphere for young players' growth as footballers and as people.</i> <br><br></p>
+
+  <img src="../static/pexels-yogendra-singh-5609026.jpg" alt="Mike" 
+        style="margin-bottom: 150px;
+            margin-left: 150px;
+            margin-right: 20px;
+            width:320px;height:384px; float: left"> 
+  <p style="margin-right:120px">The chairman, <b>Mike</b>, has been a soccer fan before his parents were born. When he turned 6, he received an invitation to become the world's youngest National Soccer League ambassador. At the age of 7, he coached a team of players at the average age of 8 who miraculously have already won 9 matches in a row since then.</p><br>
+  <p style="margin-right:120px; margin-bottom:30px">
+  Our tournament is expected to have no more than 750 teams in age ranges from 8 years old (U8) through over 18 (18+) and O48. We have a unique ideology that is well-known among our players, staff, and supporters, is recognized across the world, and distinguishes us from other football tournaments. Team spirit, hard effort, dedication, and the capacity to overcome any hurdles in life, as well as the ability to play with dignity and fairness, are all qualities we want in our players. </p>
+  <p style="color: blueviolet;"><br>Our Soccer Tournament is regarded as one of a select set of tournament clubs with a really international reputation. <br>We take pleasure in providing the finest possible atmosphere for young players' growth as footballers and as people. <br>Our tournament is expected to have no more than 750 teams in age ranges from 8 years old (U8) through over 18 (18+) and O48.
+	<br>We have a unique ideology that is well-known among our players, staff, and supporters, is recognized across the world, and distinguishes us from other football tournaments. <br>Team spirit, hard effort, dedication, and the capacity to overcome any hurdles in life, as well as the ability to play with dignity and fairness, are all qualities we want in our players.
+	
+
+</div>
+
+<!---Sponsors Content-->
+<div id="Sponsors" class="tabcontent">
+    <!---span onclick="this.parentElement.style.display='none'" class="topright">&times</span -->
+  <h3>Sponsors</h3>
+    <p style="margin-left:120px; margin-bottom: 100px">
+        <u><a href="https://engineering.asu.edu/">Ira A. Fulton Schools of Engineering</a><br></u><br>
+        <img src="../static/ira fulton logo.jpg" alt="irafultonlogo"> </p><br><br>
+    <p style="margin-left:120px; margin-bottom: 100px">
+        <u><a href="https://wpcarey.asu.edu/">W. P. Carey School of Business</a><br></u><br>
+        <img src="../static/asu wpcarey logo.jpg" alt="wpcareylogo"></p>
+</div>  
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen"
+document.getElementById("defaultOpen").click();
+</script>
+
+
+<div class="container-fluid padding">
+	<div class="row text-center padding">
+		<div class="col-12">
+			<h2>Connect</h2>
+		</div>
+		<div class="col-12 social padding">
+			<a href="#"><i class="fab fa-facebook"></i></a>
+			<a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-google-plus-g"></i></a>
+			<a href="#"><i class="fab fa-instagram"></i></a>
+			<a href="#"><i class="fab fa-youtube"></i></a>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<div class="container-fluid padding" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+		<div class="row text-center">
+			<div class="col-md-4 pt-0" style="padding-top: 2px;">
+				<div class="footer-image1"> 
+				<img src="../static/contact.jpg"></div>
+				<hr class="light">
+				<h5>Contact</h5>
+				<hr class="light">
+				<p>555-555-5555</p>
+				<p>email@asu.edu</p>
+				<p>301 E Orange St.</p>
+				<p>ASU Tempe, AZ, 85281</p>
+			</div>
+			<div class="col-md-4">
+				<div class="footer-image"> 
+					<img src="../static/hours.jpg"></div>
+				<hr class="light">
+				<h5>Our hours</h5>
+				<hr class="light">
+				<p>Monday: 9am - 5pm</p>
+				<p>Saturday: 10am - 4pm</p>
+				<p>Sunday: Closed</p>
+			</div>
+			<div class="col-md-4">
+				<div class="footer-image"> 
+					<img src="../static/support.jpg"></div>
+				<hr class="light">
+				<h5><a href="contact.html">Get Support</h5>
+				<hr class="light">
+				<p>Please feel free to contact us.</p>
+				<p>We welcome suggestions, feedback and queries.</p>
+				</a>
+			</div>
+			<div class="col-12">
+				<hr class="light-100">
+				<h5>&copy; 2021 Soccer Tournament</h5>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+</body>
+</html>

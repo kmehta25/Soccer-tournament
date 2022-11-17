@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Soccer Tournament</title>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link href="style.css" rel="stylesheet">
+
+
+    <style>  
+        body{  
+          font-family: Calibri, Helvetica, sans-serif;  
+          background-color: navy;  
+        }  
+        .container {  
+            padding: 50px;  
+          background-color: silver;  
+        }  
+          
+        .description {
+        	  padding: 100px;
+        	  background-color:#f1f1f1 ;
+        }  
+        input[type=text], input[type=password], textarea {  
+          width: 100%;  
+          padding: 15px;  
+          margin: 5px 0 22px 0;  
+          display: inline-block;  
+          border: none;  
+          background: #f1f1f1;  
+        }  
+        input[type=text]:focus, input[type=password]:focus {  
+          background-color: orange;  
+          outline: none;  
+        }  
+        input[type=text1] {  
+          width: 30%;  
+          padding: 15px;  
+          margin: 5px 0 22px 0;  
+          display: inline-block;  
+          border: none;  
+          background: #f1f1f1;  
+        }  
+        textarea {  
+          width: 100%;  
+          padding: 15px;  
+          margin: 5px 0 22px 0;  
+          display: inline-block;  
+          border: none;  
+          background: #f1f1f1;  
+        } 
+
+        input[type=text1]:focus {  
+          background-color: orange;  
+          outline: none;  
+        }  
+         div {  
+                    padding: 10px 0;  
+                 }  
+        hr {  
+          border: 1px solid #f1f1f1;  
+          margin-bottom: 25px;  
+        }  
+        .registerbtn {  
+          background-color: #4CAF50;  
+          color: white;  
+          padding: 16px 20px;  
+          margin: 8px 0;  
+          border: none;  
+          cursor: pointer;  
+          width: 100%;  
+          opacity: 0.9;  
+        }
+        .resetbtn {  
+          background-color: red;  
+          color: white;  
+          padding: 16px 20px;  
+          margin: 8px 0;  
+          border: none;  
+          cursor: pointer;  
+          width: 100%;  
+          opacity: 0.9;  
+        }  
+        .resetbtn:hover {  
+          opacity: 1;  
+        } 
+        .registerbtn:hover {  
+          opacity: 1;  
+        }  
+        </style> 
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="index.html"><img src="../static/logo6.jpg" height="200" width="50"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="fixtures.html">Fixtures</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="location.html">Maps and Locations</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.html">Support</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="register.html">Register</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="login.html">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="rules.html">Rules and Accreditation</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="standings.html">Standings</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="guest.html">Booking</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="teamRegistration.html">Register your team!</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="schedule.html">Schedule matches</a>
+				  </li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+
+<form method = 'POST' action="http://127.0.0.1:5000/teamdirector" enctype="multipart/form-data">  
+	<div class="container">  
+	<center>  <h1>Add a Team Manually</h1> </center>  
+	<hr>  
+	<label> Logged in as: Team Director </label><br><br>
+	<label> Team Name </label>   
+  <input type="text" name="teamName" placeholder= "Team Name" size="15" id="teamName" required />   
+  <label> Team ID: </label>   
+  <input type="text" name="teamId" placeholder="Team ID" size="15" id="teamId" required />
+
+  <label> Team Manager: </label><br>
+  <input type="text1" name="teamManagerFirstName" placeholder="First Name" size="3" id="teamManagerFirstName" required />
+  <br>
+  <input type="text1" name="teamManagerLastName" placeholder="Last Name" size="3" id="teamManagerLastName" required /> <br> 
+  
+
+  <label> Team Coach: </label><br>
+  <input type="text1" name="teamCoachFirstName" placeholder="First Name" size="3" id="teamCoachFirstName" required />
+  <br>
+  <input type="text1" name="teamCoachLastName" placeholder="Last Name" size="3" id="teamCoachLastName" required /> <br> 
+
+  
+	  <button type="submit" class="registerbtn">Add Team</button> 
+	  <button type="reset" class = "resetbtn">Reset</button>   
+  </form>  
+  
+  <!--- Footer -->
+  <footer>
+	  <div class="container-fluid padding" data-aos="fade-up"
+		  data-aos-offset="200"
+		  data-aos-delay="50"
+		  data-aos-duration="1000">
+		  <div class="row text-center">
+			  <div class="col-md-4 pt-0">
+				  <div class="footer-image"> 
+				  <img src="../static/logo6.jpg"></div>
+				  <hr class="light">
+				  <p>555-555-5555</p>
+				  <p>email@asu.edu</p>
+				  <p>301 E Orange St.</p>
+				  <p>ASU Tempe, AZ, 85281</p>
+			  </div>
+			  <div class="col-md-4">
+				  <hr class="light">
+				  <h5>Our hours</h5>
+				  <hr class="light">
+				  <p>Monday: 9am - 5pm</p>
+				  <p>Saturday: 10am - 4pm</p>
+				  <p>Sunday: Closed</p>
+			  </div>
+			  <div class="col-md-4">
+				  <hr class="light">
+				  <h5><a href="contact.html">Get Support</h5>
+				  <hr class="light">
+				  <p>Please feel free to contact us.</p>
+				  <p>We welcome suggestions, feedback and queries.</p>
+				  </a>
+			  </div>
+			  <div class="col-12">
+				  <hr class="light-100">
+				  <h5>&copy; 2021 Soccer Tournament</h5>
+			  </div>
+		  </div>
+	  </div>
+  </footer>
+  
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+  AOS.init();
+  </script>
+  
+  </body>  
+  </html> 

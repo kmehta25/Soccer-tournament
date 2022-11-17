@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Soccer Tournament</title>
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link href="../static/style.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@700&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript">
+   $(document).ready(function() {
+	 $("div.myDiv").hide();
+	 $("#myselection").change(function(){
+		 $("div.myDiv").hide();
+	 var demovalue = $(this).val();
+	 $("#show"+demovalue).show();
+	 });
+   });
+  </script>
+
+
+<script>
+	const button = document.getElementById('book');
+	button.addEventListener('click',async _ => {
+		try{
+			const responnse = await fetch('http://127.0.0.1:5000/available_slots', {
+				method: 'post',
+				body: {
+
+				}
+			});
+			connsole.log('Slot BOOKED!', responnse); 
+		} catch(err) {
+			console.error(`Error: ${err}`);
+		}
+	});
+</script>
+
+
+
+
+  <style>
+	table, th, td {
+	   border: 1px solid black;
+	   padding: 10px;
+	}
+ </style>
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="http://127.0.0.1:5000//"><img src="../static/logo6.jpg" height="200" width="50"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="http://127.0.0.1:5000//">Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/about">About</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/fixtures">Fixtures</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/location">Maps and Locations</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/support">Support</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/addteam">Register Team</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/login">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/rules">Rules and Accreditation</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://127.0.0.1:5000/rank">Standings</a>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div id="Age category" class="Category">
+  <label for="Age category"> Category </label>
+  <select id="myselection">
+		<optgroup>
+		<option>Select Option</option>
+    <option class="option-style" value="U9">U9 Tournament</option>
+    <option class="option-style" value="U10">U10 Tournament</option>
+    <option class="option-style" value="U11">U11 Tournament</option>
+	</optgroup>
+  </select>
+</div>
+
+	<div id="showU9" class="myDiv">
+	<caption>Schedule for U9 matches</caption>
+	<table align="center">
+		<tr>
+			<th style="padding-right: 20px">Home Team</th>
+			<th style="padding-right: 20px">Away Team</th>
+			<th style="padding-right: 20px">Location</th>
+			<th style="padding-right: 20px">Date Time</th>
+
+		</tr>
+		
+		{% for r in fixtureList %}
+		<tr>
+			<td>{{ r[0] }}</td>
+			<td>{{ r[1] }}</td>
+			<td>{{ r[2] }}</td>
+			<td>{{ r[3] }}</td>
+		</tr>
+		{% endfor %}
+		</table>
+	</div>
+
+</body>
+</html>

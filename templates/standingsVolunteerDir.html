@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Soccer Tournament</title>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="volunteerDirector.html"><img src="../static/logo6.jpg" height="200" width="50"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="homePageVolunteerDir.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutPageVolunteerDir.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fixturesVolunteerDir.html">Fixtures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="locationVolunteerDir.html">Maps and Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rulesVolunteerDir.html">Rules and Accreditation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="standingsVolunteerDir.html">Standings</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropbtn">Features</button>
+                        <div class="dropdown-content">
+                            <a href="volunteers.html">Volunteer hours</a>
+                            <a href="hostTeams.html">Host Teams</a>
+                        </div>
+                      </div> 
+                </li>
+                
+                <li class="nav-item">
+                    <form action ="http://127.0.0.1:5000/logout" method="POST">
+                        <button id= "logout" name = "logout" value = "logout" class="nav-link" >Logout</button>
+                    </form>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    $(document).ready(function() {
+    $('tr').each(function() {
+        var total = 0;
+        $(this).find('.match').each(function()
+        {
+            var matches=$(this).text();
+            if(matches.length!==0)
+            {
+                total+=parseInt(matches);
+            }
+        });
+        $(this).find('.played').html(total);
+     });
+     $(".played")
+    .map(function(){return $(this).text()})
+    .get()
+    .sort(function(a,b){return a - b })
+    .reduce(function(a, b){ if (b != a[0]) a.unshift(b); return a }, [])
+    .forEach((v,i)=>{
+        $('.played').filter(function() {return $(this).text() == v;}).next().text(i + 1);
+    });
+     });
+</script>
+<h4 style="text-align: center;"> Team Ranking List</h4> <br>
+<form method = 'GET' action="http://127.0.0.1:5000/standings" enctype="multipart/form-data">
+    <table align="center">
+        <thead>
+            <tr>
+                <th style="padding-right: 20px">S.no</th>
+                <th style="padding-right: 20px">Team name</th>
+                <th style="padding-right: 20px">Category</th>
+                <th style="padding-right: 20px">Won</th>
+                <th style="padding-right: 20px">Lost</th>
+                <th style="padding-right: 20px">Draw</th>
+                <th style="padding-right: 20px">Played</th>
+                <th style="padding-right: 20px">Rank</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Team1</td>
+                <td>U9</td>
+                <td class="match">3</td>
+                <td class="match">4</td>
+                <td class="match">3</td>
+                <td class="played"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Team2</td>
+                <td>U9</td>
+                <td class="match">3</td>
+                <td class="match">4</td>
+                <td class="match">4</td>
+                <td class="played"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Team3</td>
+                <td>U9</td>
+                <td class="match">3</td>
+                <td class="match">4</td>
+                <td class="match">0</td>
+                <td class="played"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Team4</td>
+                <td>U9</td>
+                <td class="match">3</td>
+                <td class="match">4</td>
+                <td class="match">1</td>
+                <td class="played"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Team5</td>
+                <td>U9</td>
+                <td class="match">3</td>
+                <td class="match">4</td>
+                <td class="match">2</td>
+                <td class="played"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Team6</td>
+                <td>U9</td>
+                <td class="match">3</td>
+                <td class="match">4</td>
+                <td class="match">3</td>
+                <td class="played"></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+<br>
+</form>
+<br>
+</body>
+
+
+<footer>
+	<div class="container-fluid padding" data-aos="fade-up"
+		data-aos-offset="200"
+		data-aos-delay="50"
+		data-aos-duration="1000">
+		<div class="row text-center">
+			<div class="col-md-4 pt-0" style="padding-top: 2px;">
+				<div class="footer-image1"> 
+				<img src="../static/contact.jpg"></div>
+				<hr class="light">
+				<h5>Contact</h5>
+				<hr class="light">
+				<p>555-555-5555</p>
+				<p>email@asu.edu</p>
+				<p>301 E Orange St.</p>
+				<p>ASU Tempe, AZ, 85281</p>
+			</div>
+			<div class="col-md-4">
+				<div class="footer-image"> 
+					<img src="../static/hours.jpg"></div>
+				<hr class="light">
+				<h5>Our hours</h5>
+				<hr class="light">
+				<p>Monday: 9am - 5pm</p>
+				<p>Saturday: 10am - 4pm</p>
+				<p>Sunday: Closed</p>
+			</div>
+			<div class="col-md-4">
+				<div class="footer-image"> 
+					<img src="../static/support.jpg"></div>
+				<hr class="light">
+				<h5><a href="contact.html">Get Support</h5>
+				<hr class="light">
+				<p>Please feel free to contact us.</p>
+				<p>We welcome suggestions, feedback and queries.</p>
+				</a>
+			</div>
+			<div class="col-12">
+				<hr class="light-100">
+				<h5>&copy; 2021 Soccer Tournament</h5>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+</body>
+</html>

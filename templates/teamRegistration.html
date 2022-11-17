@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Team Registration</title>
+			<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+	<link href="../static/style.css" rel="stylesheet">
+			<script>
+					$(function(){
+					$("#header").load("header.html");
+					});
+			</script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript">
+   $(document).ready(function() {
+	 $("div.myDiv").hide();
+	 $("#myselection").change(function(){
+		 $("div.myDiv").hide();
+	 var demovalue = $(this).val();
+	 $("#show"+demovalue).show();
+	 });
+   });
+  </script>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="teamDirector.html"><img src="../static/logo6.jpg" height="200" width="50"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="homePageTeamDir.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutPageTeamDir.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fixturesTeamDir.html">Fixtures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="locationTeamDir.html">Maps and Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="rulesTeamDir.html">Rules and Accreditation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="standingsTeamDir.html">Standings</a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropbtn">Features</button>
+                        <div class="dropdown-content">
+                            <a href="schedule.html">Schedule Matches</a>
+                            <a href="teamRegistration.html">Approve Team Registration</a>
+                        </div>
+                      </div> 
+                </li>
+                
+                <li class="nav-item">
+                    <button class="nav-link" href="index.html">Logout</button>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+	        <!--Navigation bar-->
+	        <div id="nav-placeholder"></div>
+	        <script>
+	        $(function(){
+	            $("#nav-placeholder").load("header.html");
+	        });
+	        </script>
+	<br>
+	<h4 style="text-align: center;">Approve Team Registration</h4> <br>
+	<form method = 'GET' action="http://127.0.0.1:5000/acceptteam" enctype="multipart/form-data">
+	<table align="center">
+			<tr>
+				<th>Team Name</th>
+				<th>Approval Status</th>
+			</tr>
+			
+			{% for r in approvalList %}
+		<tr>
+			<td>{{ r[0] }}</td>
+			<td>{{ r[1] }}</td>
+		</tr>
+		{% endfor %}
+
+	</table>
+	<br>
+	<div style="text-align:center">  
+		<input type="submit" value="Save and submit"/>  
+	</div> 
+	</form>
+<br>
+</body>
+
+<footer>
+    <div class="container-fluid padding" data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000">
+        <div class="row text-center" style="margin-top: 10px;">
+            <div class="col-md-4 pt-0">
+                <div class="footer-image">
+                <img src="../static/logo6.jpg"></div>
+                <hr class="light">
+                <p>555-555-5555</p>
+                <p>email@asu.edu</p>
+                <p>301 E Orange St.</p>
+                <p>ASU Tempe, AZ, 85281</p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h5>Our hours</h5>
+                <hr class="light">
+                <p>Monday: 9am - 5pm</p>
+                <p>Saturday: 10am - 4pm</p>
+                <p>Sunday: Closed</p>
+            </div>
+            <div class="col-md-4">
+                <hr class="light">
+                <h5><a href="contact.html">Get Support</h5>
+                <hr class="light">
+                <p>Please feel free to contact us.</p>
+                <p>We welcome suggestions, feedback and queries.</p>
+                </a>
+            </div>
+            <div class="col-12">
+                <hr class="light-100">
+                <h5>&copy; 2021 Soccer Tournament</h5>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
+</html>
